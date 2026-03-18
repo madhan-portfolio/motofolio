@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Brain, Cpu, Database, Zap } from "lucide-react";
@@ -7,15 +7,32 @@ import NextDestination from "@/components/NextDestination";
 import BikeTransition from "@/components/BikeTransition";
 
 const techStack = [
-  { icon: Brain, label: "AI / ML" },
-  { icon: Cpu, label: "Digital Processing" },
-  { icon: Database, label: "Data Analysis" },
-  { icon: Zap, label: "Signal Processing" },
+  {
+    icon: Brain,
+    label: "AI / ML",
+    description: "Learned basics of machine learning concepts and how models process data.",
+  },
+  {
+    icon: Cpu,
+    label: "Digital Processing",
+    description: "Worked on signal/data processing techniques and understood real-world applications.",
+  },
+  {
+    icon: Database,
+    label: "Data Analysis",
+    description: "Gained experience in analyzing datasets and extracting useful insights.",
+  },
+  {
+    icon: Zap,
+    label: "Signal Processing",
+    description: "Explored how signals are captured, filtered, and transformed for practical engineering use.",
+  },
 ];
 
 const NITProject = () => {
   const navigate = useNavigate();
   const [transitioning, setTransitioning] = useState(false);
+  const [activeTopic, setActiveTopic] = useState<string | null>(null);
 
   return (
     <>
@@ -49,7 +66,7 @@ const NITProject = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
             >
-              NIT Karaikal — a high-speed detour into the world of artificial intelligence and signal processing. Explored machine learning algorithms applied to digital processing challenges.
+              NIT Karaikal — a high-speed detour into the world of artificial intelligence and signal processing. Click each topic to learn more.
             </motion.p>
 
             <motion.div
@@ -62,21 +79,47 @@ const NITProject = () => {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
                 {techStack.map((t, i) => {
                   const Icon = t.icon;
+                  const isActive = activeTopic === t.label;
                   return (
-                    <motion.div
+                    <motion.button
                       key={t.label}
-                      className="flex flex-col items-center gap-3 p-4 rounded-lg border border-border/50 hover:border-secondary/40 hover:bg-secondary/5 transition-all duration-300"
+                      className={`flex flex-col items-center gap-3 p-4 rounded-lg border transition-all duration-300 cursor-pointer ${
+                        isActive
+                          ? "border-secondary bg-secondary/10 shadow-[0_0_20px_hsl(var(--secondary)/0.3)]"
+                          : "border-border/50 hover:border-secondary/40 hover:bg-secondary/5"
+                      }`}
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 0.5 + i * 0.1, type: "spring" }}
                       whileHover={{ scale: 1.08 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => setActiveTopic(isActive ? null : t.label)}
                     >
                       <Icon className="w-8 h-8 text-secondary" />
                       <span className="font-display text-xs text-foreground">{t.label}</span>
-                    </motion.div>
+                    </motion.button>
                   );
                 })}
               </div>
+
+              {/* Animated info panel */}
+              <AnimatePresence mode="wait">
+                {activeTopic && (
+                  <motion.div
+                    key={activeTopic}
+                    className="mt-6 p-5 rounded-lg border border-secondary/30 bg-secondary/5"
+                    initial={{ opacity: 0, y: 10, height: 0 }}
+                    animate={{ opacity: 1, y: 0, height: "auto" }}
+                    exit={{ opacity: 0, y: -10, height: 0 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                  >
+                    <p className="font-display text-sm text-secondary mb-1">{activeTopic}</p>
+                    <p className="font-body text-sm text-muted-foreground">
+                      {techStack.find((t) => t.label === activeTopic)?.description}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
 
             <NextDestination label="Next Destination → Internship" onClick={() => setTransitioning(true)} />
