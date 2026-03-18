@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Palette, Globe, Code, Atom, Terminal, Megaphone } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import NextDestination from "@/components/NextDestination";
-import BikeTransition from "@/components/BikeTransition";
+import BikeDriftTransition from "@/components/BikeDriftTransition";
 
 const skills = [
   {
@@ -113,7 +113,7 @@ const Skills = () => {
 
   return (
     <>
-      <BikeTransition isActive={transitioning} onComplete={() => navigate("/contact")} />
+      <BikeDriftTransition isActive={transitioning} onComplete={() => navigate("/contact")} />
       <PageShell>
         <section className="min-h-screen flex flex-col justify-center py-24 px-4">
           <div className="max-w-4xl mx-auto w-full">
