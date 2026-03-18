@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Palette, Globe, Code, Atom, Terminal, Megaphone } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import NextDestination from "@/components/NextDestination";
-import BikeTransition from "@/components/BikeTransition";
+import BikeDriftTransition from "@/components/BikeDriftTransition";
 
 const skills = [
   {
