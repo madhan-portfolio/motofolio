@@ -11,7 +11,7 @@ import Internship from "./pages/Internship";
 import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-import Navbar from "./components/Navbar";
+
 
 const queryClient = new QueryClient();
 
