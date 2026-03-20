@@ -11,7 +11,7 @@ import Internship from "./pages/Internship";
 import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-import Navbar from "./components/Navbar";
+
 
 const queryClient = new QueryClient();
 
@@ -19,7 +19,6 @@ const AppRoutes = () => {
   const location = useLocation();
   return (
     <>
-      <Navbar />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<StartJourney />} />
