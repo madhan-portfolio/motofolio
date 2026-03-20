@@ -5,6 +5,7 @@ import { Palette, Globe, Code, Atom, Terminal, Megaphone } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import NextDestination from "@/components/NextDestination";
 import BikeDriftTransition from "@/components/BikeDriftTransition";
+import BackButton from "@/components/BackButton";
 
 const skills = [
   {

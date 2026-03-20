@@ -6,13 +6,15 @@ const projects = [
     icon: ShoppingCart,
     title: "Ev Cart",
     description: "A feature-rich e-commerce application for electric vehicles with cart management, product filtering, and responsive design.",
-    tags: ["React", "JavaScript", "CSS"],
+    tags: ["HTML", "CSS", "JavaScript", "React"],
+    link: "https://evcart.netlify.app/",
   },
   {
     icon: Globe,
     title: "Portfolio Website",
     description: "This very portfolio — a cinematic motorcycle-themed journey through my career milestones, built with React and Framer Motion.",
-    tags: ["React", "Framer Motion", "Tailwind"],
+    tags: ["React", "Framer Motion", "Tailwind CSS", "TypeScript"],
+    link: "https://madhan-portfolio.github.io/my-website/",
   },
 ];
 
@@ -39,7 +41,7 @@ const ProjectsSection = () => {
           return (
             <motion.div
               key={project.title}
-              className="glass-card glass-card-hover rounded-lg p-8 group cursor-default"
+              className="glass-card glass-card-hover rounded-lg p-8 group cursor-default flex flex-col"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -50,10 +52,10 @@ const ProjectsSection = () => {
                 <Icon className="w-6 h-6 text-primary animate-pulse-glow" />
               </div>
               <h3 className="font-display text-xl text-foreground mb-3">{project.title}</h3>
-              <p className="font-body text-sm text-muted-foreground leading-relaxed mb-5">
+              <p className="font-body text-sm text-muted-foreground leading-relaxed mb-5 flex-1">
                 {project.description}
               </p>
-              <div className="flex flex-wrap gap-2 mb-5">
+              <div className="flex flex-wrap gap-2 mb-6">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
@@ -63,9 +65,14 @@ const ProjectsSection = () => {
                   </span>
                 ))}
               </div>
-              <button className="font-display text-xs tracking-wider text-primary flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
-                View Project <ExternalLink className="w-4 h-4" />
-              </button>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-display text-xs tracking-wider px-5 py-2.5 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 box-glow-primary hover:box-glow-primary-intense transition-all duration-300 w-fit"
+              >
+                View Live Project <ExternalLink className="w-4 h-4" />
+              </a>
             </motion.div>
           );
         })}

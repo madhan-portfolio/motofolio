@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GraduationCap, BookOpen, Users, Award } from "lucide-react";
 import PageShell from "@/components/PageShell";
+import BackButton from "@/components/BackButton";
 import NextDestination from "@/components/NextDestination";
 import BikeTransition from "@/components/BikeTransition";
 

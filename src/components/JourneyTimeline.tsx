@@ -1,43 +1,25 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { GraduationCap, Code, Rocket, Brain, Briefcase, TrendingUp } from "lucide-react";
+import { GraduationCap, Brain, Briefcase } from "lucide-react";
 
 const milestones = [
   {
     icon: GraduationCap,
-    year: "2022",
-    title: "Started Engineering",
-    description: "Began my B.E. in ECE at St. Joseph's College of Engineering, Chennai. The spark of a new journey.",
-  },
-  {
-    icon: Code,
-    year: "2023",
-    title: "Began Web Development",
-    description: "Dove into HTML, CSS, and JavaScript. Built my first static sites and fell in love with frontend.",
-  },
-  {
-    icon: Rocket,
-    year: "2023",
-    title: "Built Ev Cart",
-    description: "Developed an e-commerce application for electric vehicles, learning React and state management.",
+    year: "2022 – 2026",
+    title: "B.E. Electronics & Communication Engineering",
+    description: "St. Joseph's College of Engineering, Chennai. Four years of building a strong technical foundation.",
   },
   {
     icon: Brain,
-    year: "2024",
+    year: "January 2026",
     title: "AI Digital Processing Project",
-    description: "Completed an AI-based digital processing project at NIT Karaikal, exploring machine learning.",
+    description: "Completed an AI-based digital processing project at NIT Karaikal, exploring machine learning and signal processing.",
   },
   {
     icon: Briefcase,
-    year: "2025",
-    title: "Internship at Evolve Solutions",
+    year: "Feb – Mar 2026",
+    title: "Internship — Evolve IT Solutions",
     description: "Gained real-world experience in web development, collaborating on production-grade applications.",
-  },
-  {
-    icon: TrendingUp,
-    year: "2026",
-    title: "Continuously Growing",
-    description: "Always learning, always building. The road never ends — it only gets more exciting.",
   },
 ];
 
@@ -53,7 +35,6 @@ const MilestoneCard = ({
 
   return (
     <div className={`flex items-center gap-6 md:gap-10 ${isLeft ? "md:flex-row" : "md:flex-row-reverse"} flex-col md:flex-row`}>
-      {/* Card */}
       <motion.div
         className="glass-card glass-card-hover rounded-lg p-6 max-w-sm w-full cursor-default"
         initial={{ opacity: 0, x: isLeft ? -60 : 60 }}
@@ -72,7 +53,6 @@ const MilestoneCard = ({
         <p className="font-body text-sm text-muted-foreground leading-relaxed">{milestone.description}</p>
       </motion.div>
 
-      {/* Dot on road */}
       <motion.div
         className="relative z-10 w-5 h-5 rounded-full bg-primary road-glow flex-shrink-0"
         initial={{ scale: 0 }}
@@ -81,7 +61,6 @@ const MilestoneCard = ({
         transition={{ type: "spring", stiffness: 300, damping: 15, delay: 0.1 }}
       />
 
-      {/* Spacer for the other side */}
       <div className="hidden md:block max-w-sm w-full" />
     </div>
   );
@@ -104,7 +83,7 @@ const JourneyTimeline = () => {
         viewport={{ once: true }}
       >
         <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground text-glow-primary mb-4">
-          The Journey
+          My Journey
         </h2>
         <p className="font-body text-muted-foreground max-w-md mx-auto">
           Every milestone is a checkpoint on the road. Scroll to ride through my story.
@@ -112,16 +91,12 @@ const JourneyTimeline = () => {
       </motion.div>
 
       <div className="relative max-w-4xl mx-auto">
-        {/* Road line (background) */}
         <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-border hidden md:block" />
-
-        {/* Road line (animated fill) */}
         <motion.div
           className="absolute left-1/2 -translate-x-1/2 top-0 w-[2px] bg-primary road-glow hidden md:block"
           style={{ height: pathHeight }}
         />
 
-        {/* Milestones */}
         <div className="flex flex-col gap-16 md:gap-20">
           {milestones.map((m, i) => (
             <MilestoneCard key={i} milestone={m} index={i} />

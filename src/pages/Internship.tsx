@@ -5,6 +5,7 @@ import { Briefcase, Code, Users, Rocket } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import NextDestination from "@/components/NextDestination";
 import BikeTransition from "@/components/BikeTransition";
+import BackButton from "@/components/BackButton";
 
 const experiences = [
   { icon: Code, title: "Web Development", desc: "Built and maintained production-grade web applications using modern frameworks and tools." },

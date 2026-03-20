@@ -5,6 +5,7 @@ import { Brain, Cpu, Database, Zap } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import NextDestination from "@/components/NextDestination";
 import BikeTransition from "@/components/BikeTransition";
+import BackButton from "@/components/BackButton";
 
 const techStack = [
   {
