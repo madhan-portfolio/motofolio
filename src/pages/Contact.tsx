@@ -16,6 +16,7 @@ const Contact = () => {
 
   return (
     <PageShell>
+      <BackButton to="/skills" />
       <section className="min-h-screen flex flex-col justify-center py-24 px-4">
         <div className="max-w-3xl mx-auto w-full">
           <motion.div
