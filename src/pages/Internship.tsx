@@ -21,6 +21,7 @@ const Internship = () => {
     <>
       <BikeTransition isActive={transitioning} onComplete={() => navigate("/skills")} />
       <PageShell>
+        <BackButton to="/nit-project" />
         <section className="min-h-screen flex flex-col justify-center py-24 px-4">
           <div className="max-w-4xl mx-auto w-full">
             <motion.div
