@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Mail, Phone, Linkedin, Github, ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import PageShell from "@/components/PageShell";
+import BackButton from "@/components/BackButton";
 
 const contacts = [
   { icon: Mail, label: "Email", value: "smamsmathan12@gmail.com", href: "mailto:smamsmathan12@gmail.com" },
@@ -15,6 +16,7 @@ const Contact = () => {
 
   return (
     <PageShell>
+      <BackButton to="/skills" />
       <section className="min-h-screen flex flex-col justify-center py-24 px-4">
         <div className="max-w-3xl mx-auto w-full">
           <motion.div

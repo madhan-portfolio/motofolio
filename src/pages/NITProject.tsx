@@ -5,6 +5,7 @@ import { Brain, Cpu, Database, Zap } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import NextDestination from "@/components/NextDestination";
 import BikeTransition from "@/components/BikeTransition";
+import BackButton from "@/components/BackButton";
 
 const techStack = [
   {
@@ -38,6 +39,7 @@ const NITProject = () => {
     <>
       <BikeTransition isActive={transitioning} onComplete={() => navigate("/internship")} />
       <PageShell>
+        <BackButton to="/college" />
         <section className="min-h-screen flex flex-col justify-center py-24 px-4">
           <div className="max-w-4xl mx-auto w-full">
             <motion.div

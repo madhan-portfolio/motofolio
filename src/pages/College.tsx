@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GraduationCap, BookOpen, Users, Award } from "lucide-react";
 import PageShell from "@/components/PageShell";
+import BackButton from "@/components/BackButton";
 import NextDestination from "@/components/NextDestination";
 import BikeTransition from "@/components/BikeTransition";
 
@@ -20,6 +21,7 @@ const College = () => {
     <>
       <BikeTransition isActive={transitioning} onComplete={() => navigate("/nit-project")} />
       <PageShell>
+        <BackButton to="/" />
         <section className="min-h-screen flex flex-col justify-center py-24 px-4">
           {/* Header */}
           <div className="max-w-4xl mx-auto w-full">

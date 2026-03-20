@@ -5,6 +5,7 @@ import { Palette, Globe, Code, Atom, Terminal, Megaphone } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import NextDestination from "@/components/NextDestination";
 import BikeDriftTransition from "@/components/BikeDriftTransition";
+import BackButton from "@/components/BackButton";
 
 const skills = [
   {
@@ -115,6 +116,7 @@ const Skills = () => {
     <>
       <BikeDriftTransition isActive={transitioning} onComplete={() => navigate("/contact")} />
       <PageShell>
+        <BackButton to="/internship" />
         <section className="min-h-screen flex flex-col justify-center py-24 px-4">
           <div className="max-w-4xl mx-auto w-full">
             <motion.div

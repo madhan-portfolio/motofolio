@@ -5,6 +5,7 @@ import { Briefcase, Code, Users, Rocket } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import NextDestination from "@/components/NextDestination";
 import BikeTransition from "@/components/BikeTransition";
+import BackButton from "@/components/BackButton";
 
 const experiences = [
   { icon: Code, title: "Web Development", desc: "Built and maintained production-grade web applications using modern frameworks and tools." },
@@ -20,6 +21,7 @@ const Internship = () => {
     <>
       <BikeTransition isActive={transitioning} onComplete={() => navigate("/skills")} />
       <PageShell>
+        <BackButton to="/nit-project" />
         <section className="min-h-screen flex flex-col justify-center py-24 px-4">
           <div className="max-w-4xl mx-auto w-full">
             <motion.div
