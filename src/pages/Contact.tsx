@@ -34,9 +34,10 @@ const Contact = () => {
                 🏁 Final Destination
               </span>
             </motion.div>
-            <span className="font-display text-xs tracking-[0.3em] text-primary uppercase block mb-3">2026</span>
-            <h1 className="font-display text-3xl sm:text-5xl font-bold text-foreground text-glow-primary mb-4">
+            <h1 className="font-display text-3xl sm:text-5xl font-bold text-foreground text-glow-primary mb-2">
               Get In Touch
+            </h1>
+            <span className="font-display text-xs tracking-[0.3em] text-primary uppercase block mb-4">2026</span>
             </h1>
             <p className="font-body text-lg text-muted-foreground max-w-md mx-auto">
               The ride ends here — but the connection starts now. Let's build something together.

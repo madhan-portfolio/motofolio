@@ -42,25 +42,23 @@ const NITProject = () => {
         <BackButton to="/college" />
         <section className="min-h-screen flex flex-col justify-center py-24 px-4">
           <div className="max-w-4xl mx-auto w-full">
-            <motion.div
-              className="flex items-center gap-4 mb-3"
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-            >
-              <div className="w-14 h-14 rounded-full bg-secondary/10 border border-secondary/30 flex items-center justify-center">
-                <Brain className="w-7 h-7 text-secondary" />
-              </div>
-              <span className="font-display text-xs tracking-[0.3em] text-secondary uppercase">January 2026</span>
-            </motion.div>
-
             <motion.h1
-              className="font-display text-3xl sm:text-5xl font-bold text-foreground text-glow-red mb-4"
+              className="font-display text-3xl sm:text-5xl font-bold text-foreground text-glow-red mb-2"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15, duration: 0.6 }}
             >
               AI Digital Processing Project
             </motion.h1>
+
+            <motion.span
+              className="font-display text-xs tracking-[0.3em] text-secondary uppercase block mb-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              January 2026
+            </motion.span>
 
             <motion.p
               className="font-body text-lg text-muted-foreground max-w-2xl mb-6"
