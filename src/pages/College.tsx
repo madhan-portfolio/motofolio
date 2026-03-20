@@ -25,26 +25,23 @@ const College = () => {
         <section className="min-h-screen flex flex-col justify-center py-24 px-4">
           {/* Header */}
           <div className="max-w-4xl mx-auto w-full">
-            <motion.div
-              className="flex items-center gap-4 mb-3"
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
-                <GraduationCap className="w-7 h-7 text-primary" />
-              </div>
-              <span className="font-display text-xs tracking-[0.3em] text-primary uppercase">2022 – 2026</span>
-            </motion.div>
-
             <motion.h1
-              className="font-display text-3xl sm:text-5xl font-bold text-foreground text-glow-primary mb-4"
+              className="font-display text-3xl sm:text-5xl font-bold text-foreground text-glow-primary mb-2"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15, duration: 0.6 }}
             >
               St. Joseph's College of Engineering
             </motion.h1>
+
+            <motion.span
+              className="font-display text-xs tracking-[0.3em] text-primary uppercase block mb-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              2022 – 2026
+            </motion.span>
 
             <motion.p
               className="font-body text-lg text-muted-foreground max-w-2xl mb-16"
